@@ -95,6 +95,10 @@ sudo apt install ubuntu-desktop
 
 <br>
 
+### Optional: Using USB Drive 
+
+If you used a USB drive as a bootable drive, you will need to go through the Bios and select the USB volume with the bootable image. On the Jetson pres ESC or F11 at the beginning of the boot cycle. If you are connected to a monitor, you may see the NVIDIA prompts for the UEFI menu dueing the initial bootup phase. 
+
 You've now got Ubuntu running on your Jetson Orin NX. 
 ---
 
