@@ -93,6 +93,8 @@ sudo apt install ubuntu-desktop
 - The username and password for the initial Ubuntu account are `ubuntu`/`ubuntu`
 - You will need to create a new account and change admin privileges to ensure security
 
+<br>
+
 You've now got Ubuntu running on your Jetson Orin NX. 
 ---
 
