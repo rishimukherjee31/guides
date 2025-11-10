@@ -30,7 +30,7 @@ The device is now in recovery mode.
 
 You will need a bootloader to load the image onto the Orin. With this bootloader, you can also run different Linux versions compatible with our Orin. This is also essential to run an OS off a bootable drive. The Linux for Tegra tools installed with the boot firmware tarball contain scripts used to flash the software of a Jetson board, both firmware and operating system.
 
-First, grab the dependencies:
+First, grab the dependencies (on the host machine):
 
 ```bash
 sudo apt install -y python3 mkbootimg bzip2 cpp device-tree-compiler
@@ -48,7 +48,7 @@ Install missing dependencies and fix file permissions:
 sudo ./tools/l4t_flash_prerequisites.sh
 ```
 
-From the Linux_for_Tegra directory, enter the following command to program the latest QSPI boot firmware. It will then reboot the kit automatically upon success.
+From the Linux_for_Tegra directory on your host machine, enter the following command to program the latest QSPI boot firmware. It will then reboot the kit automatically upon success.
 
 > Make sure to select the settings for the Jetson Orin NX. Run the following command:
 
@@ -71,7 +71,6 @@ Once you have this image in the host machine, you can upload it to the drive. Na
 # Copy the image over the boot media (assuming here it is detected as /dev/sda)
 xzcat ubuntu-22.04-preinstalled-server-arm64+tegra-jetson.img.xz | \
     sudo dd of=/dev/sda bs=16M status=progress
-    
 sudo sync
 ```
 
