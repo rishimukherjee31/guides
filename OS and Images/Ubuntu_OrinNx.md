@@ -83,13 +83,36 @@ Once you have the image installed on the drive, you may see an option to 'run' t
 
 ## Step 4: Install CUDA Drivers and NVIDIA Software
 
+SDKs like CUDA Toolkit and TensorRT that allow building AI applications on Jetson devices are available directly from NVIDIA:
+
+```bash
+# CUDA
+sudo apt-key adv --fetch-keys "https://repo.download.nvidia.com/jetson/jetson-ota-public.asc"
+sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/t234 r36.4 main"
+sudo add-apt-repository -y "deb https://repo.download.nvidia.com/jetson/common r36.4 main"
+sudo apt install -y cuda
+
+# Tensor RT
+sudo apt install -y libnvinfer-bin libnvinfer-samples
+
+# cuda-samples dependencies
+sudo apt install -y cmake
+
+echo "export PATH=/usr/local/cuda-12.6/bin\${PATH:+:\${PATH}}" >> ~/.profile
+echo "export LD_LIBRARY_PATH=/usr/local/cuda-12.6/lib64\${LD_LIBRARY_PATH:+:\${LD_LIBRARY_PATH}}" >> ~/.profile
+
+# Logout or reboot to apply the profile change
+sudo reboot
+```
+<br>
+
 ## Step 5: Run Ubuntu on the Orin NX
 
 The image installed is a server image. If you don't need a GUI, this is the end of the process. Once you follow the prompted steps for the Ubuntu installation, the Jetson will run Ubuntu on boot. To install Ubuntu desktop, run the following command in the shell:
 
 ```bash
 sudo apt install ubuntu-desktop
-sudo apt install lightdm # If the 
+sudo apt install lightdm # The CUDA drivers may conflict with the ones required for gdm3; lightdm works much better[11/2025].
 ```
 
 > Once you install the desktop, reboot the system, and you will now have Ubuntu installed on your machine.
