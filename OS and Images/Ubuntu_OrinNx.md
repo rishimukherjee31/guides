@@ -9,7 +9,8 @@ This document will serve as a guide on how to install the latest Ubuntu image (2
 - [Recovery Mode](#step-1-put-the-jetson-in-recovery-mode)
 - [Bootloader Setup](#step-2-prepare-the-linux-for-tegra-bootloader)
 - [Ubuntu Image](#step-3-download-latest-ubuntu-image)
-- [Desktop Install](#step-4-run-ubuntu-on-the-orin-nx)
+- [NVIDIA Drivers](#step-4-install-cuda-drivers-and-nvidia-software)
+- [Desktop Install](#step-5-run-ubuntu-on-the-orin-nx)
 
 <br>
 
@@ -80,12 +81,15 @@ Once you have the image installed on the drive, you may see an option to 'run' t
 
 <br>
 
-## Step 4: Run Ubuntu on the Orin NX
+## Step 4: Install CUDA Drivers and NVIDIA Software
+
+## Step 5: Run Ubuntu on the Orin NX
 
 The image installed is a server image. If you don't need a GUI, this is the end of the process. Once you follow the prompted steps for the Ubuntu installation, the Jetson will run Ubuntu on boot. To install Ubuntu desktop, run the following command in the shell:
 
 ```bash
 sudo apt install ubuntu-desktop
+sudo apt install lightdm # If the 
 ```
 
 > Once you install the desktop, reboot the system, and you will now have Ubuntu installed on your machine.
