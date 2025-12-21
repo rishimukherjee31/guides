@@ -1,8 +1,13 @@
-# Installing Ubuntu on the Jetson Orin NX
+[Home](Home) | [Hardware Specifications](Hardware-Spec) | [Software Packages](Software-Packages) | [Api-DOCS](Api-DOCS) 
 
-This document will serve as a guide on how to install the latest Ubuntu image (22.04 as of writing) on a Jetson Orin NX. This process requires some hardware modifications, so make sure to have some female-to-female jumper cables handy.
+This document will serve as a guide on how to install the latest Ubuntu image (22.04 as of writing) on a Jetson Orin NX. This process requires some hardware modifications, so make sure to have some female-to-female jumper cables handy. While this guide is written for the Jetson Orin NX, a Jetson Nano device can also be used with the same installation guide. 
 
-> I will be uploading the image to an NVMe drive and then using the drive to load Ubuntu on the Jetson. However, there are instructions for flashing the software using a USB drive as well.
+| Jetson Model | GPU Max Frequency | CPU | CPU Max Frequency | Memory | GPU | AI Performance |
+|--------------|-------------------|-----|-------------------|---------|-----|----------------|
+| Jetson Orin NX 16GB | 918 MHz | 8-core NVIDIA Arm® Cortex A78AE v8.2 64-bit CPU 2MB L2 + 4MB L3 | 2.0 GHz | 16GB 128-bit LPDDR5 102.4GB/s | 1024-core NVIDIA Ampere architecture GPU with 32 Tensor Cores | 100 TOPS |
+| Jetson Orin Nano Super | 1020 MHz | 6-core Arm® Cortex®-A78AE v8.2 64-bit CPU 1.5MB L2 + 4MB L3 | 1.7 GHz | 8GB 128-bit LPDDR5 102 GB/s | 1024-core NVIDIA Ampere architecture GPU with 32 Tensor Cores | 67 TOPS |
+
+> We will be uploading the image to an NVMe drive and then using the drive to load Ubuntu on the Jetson. However, there are instructions for flashing the software using a USB drive as well.
 
 <br>
 
@@ -16,7 +21,7 @@ This document will serve as a guide on how to install the latest Ubuntu image (2
 
 ## Step 1: Put the Jetson in Recovery Mode
 
-On the Jetson Orin NX this is done by shorting pin 9 and pin 10 (GND and FC_REC) with a jumper cable. You can then connect a USB-C cable from the Jetson to a host machine (I used an Alienware laptop running Linux). Now, when you power on the Jetson, you will be able to see the Jetson on your host machine using `lsusb`.
+On the Jetson Orin NX this is done by shorting pin 9 and pin 10 (GND and FC_REC) with a jumper cable. You can then connect a USB-C cable from the Jetson to a host machine (We used an Alienware laptop running Linux). Now, when you power on the Jetson, you will be able to see the Jetson on your host machine using `lsusb`.
 
 ```bash
 lsusb
@@ -64,7 +69,7 @@ Reboot the Jetson once the command runs successfully. The difficult part is done
 
 ## Step 3: Download Latest Ubuntu Image
 
-With the bootloader flashed, prepare your bootable medium. I used a 1TB NVMe SSD (2280 form factor) for reliability and optimal performance. You will need to download the correct image: [Ubuntu 22.04 for Tegra](https://cdimage.ubuntu.com/releases/jammy/release/nvidia-tegra/ubuntu-22.04-preinstalled-server-arm64+tegra-jetson.img.xz).
+With the bootloader flashed, prepare your bootable medium. We used a 1TB NVMe SSD (2280 form factor) for reliability and optimal performance. You will need to download the correct image: [Ubuntu 22.04 for Tegra](https://cdimage.ubuntu.com/releases/jammy/release/nvidia-tegra/ubuntu-22.04-preinstalled-server-arm64+tegra-jetson.img.xz).
 
 Once you have this image in the host machine, you can upload it to the drive. Navigate to the image directory and run the following commands:
 
