@@ -1,4 +1,4 @@
-[Home](Home) | [Hardware Specifications](Hardware-Spec) | [Software Packages](Software-Packages) | [Api-DOCS](Api-DOCS) 
+# Installing Ubuntu on the Jetson
 
 This document will serve as a guide on how to install the latest Ubuntu image (22.04 as of writing) on a Jetson Orin NX. This process requires some hardware modifications, so make sure to have some female-to-female jumper cables handy. While this guide is written for the Jetson Orin NX, a Jetson Nano device can also be used with the same installation guide. 
 
