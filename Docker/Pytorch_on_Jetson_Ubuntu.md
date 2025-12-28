@@ -1,17 +1,17 @@
 # Running Pytorch on Jetson Orin/Nano using Docker and L4T for a Native Ubuntu Installation (22.04)
 
+<br>
+
 This README guide is tailored for a Jetson Orin NX running Ubuntu 22.04 with the NVIDIA Container Runtime already installed. The setup runs intensive CUDA/PyTorch workloads inside a container to keep the base Ubuntu 22.04 host system clean. It uses NVIDIA's L4T (Linux for Tegra) optimized containers to bypass host-side CUDA configuration issues.
 
 > Jetson Orin NX: PyTorch in Docker (CUDA Accelerated)
 
-<br>
 
 ## 1. Prerequisites
 Ensure the NVIDIA Container Toolkit is correctly linked to your Docker daemon on the host:
-bash
 
-### Configure Docker to use the NVIDIA runtime by default
 ```bash
+# Configure Docker to use the NVIDIA runtime by default
 sudo nvidia-ctk runtime configure --runtime=docker
 sudo systemctl restart docker
 ```
