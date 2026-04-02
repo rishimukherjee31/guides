@@ -114,7 +114,7 @@ docker compose \
 ```
 > This may take some time as it will install all of the required dependencies.
 
-Now you can create the super user
+Now you can create the super user:
 ```bash
 docker exec -it cvat_server bash -ic 'python3 ~/manage.py createsuperuser'
 ```
