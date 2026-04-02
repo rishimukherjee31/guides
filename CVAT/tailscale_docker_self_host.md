@@ -11,7 +11,9 @@ You will need Docker to download the prebuilt CVAT containers that allow you to 
 CVAT is part of OpenCV and thus works on most systems. It can be configured locally from source, 
 however, Docker makes the process a lot smoother and we will therefore use Docker for our build.
 
-### 2. Install Docker
+<br>
+
+### 1. Install Docker
 First, you will need Docker. In a terminal type the following set of commands:
 
 ```bash
@@ -42,6 +44,8 @@ sudo usermod -aG docker $USER
 # Log out and back in, then verify:
 groups
 ```
+
+<br>
 
 ### 2. (Optional) For GPU Access in the Docker Container
 ```bash
@@ -81,8 +85,12 @@ sudo systemctl restart docker
 docker run --rm --gpus all nvidia/cuda:12.0-base-ubuntu22.04 nvidia-smi
 ```
 
-### 3. Install CVAT with Serverless Support
+<br>
+
+## Install CVAT with Serverless Support
 Install CVAT from the github page. You will need to set the ```CVAT_HOST``` in this step as well.
+
+### Install CVAT on your Machine
 I am using tailscale so I will be using the tailscale IP:
 ```bash
 git clone https://github.com/cvat-ai/cvat
@@ -99,7 +107,9 @@ tailscale ip -4
 # 100.x.x.x
 ```
 
-### 4. Start CVAT
+<br>
+
+### 3. Start CVAT
 If you don't need GPU access for autolabeling, you can use the following command to start CVAT:
 ```bash
 docker compose up
@@ -119,7 +129,9 @@ Now you can create the super user:
 docker exec -it cvat_server bash -ic 'python3 ~/manage.py createsuperuser'
 ```
 
-### 5. Access from the Remote Client
+<br>
+
+## Access from the Remote Client
 CVAT will expose the website in port 8080. You can access the CVAT webpage in your browser
 by typing in the ```IP Address``` of the server followed by the port number: ```http//:100.x.x.x:8080```.
 Tailscale is secure so it handles all of the secure tunneling. If you are solely on a LAN, 
