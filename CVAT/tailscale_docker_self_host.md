@@ -6,6 +6,8 @@ If you have a GPU, there is an option to autolabel your dataset using pretrained
 host CVAT on an [AWS](https://aws.amazon.com/free/?trk=dc9b9d60-cc82-4cd5-8a61-0b33d6a79fab&sc_channel=ps&ef_id=CjwKCAjwhLPOBhBiEiwA8_wJHMc0rR3EuwL-BUwiOoxxZ1MAYm09RItY5nqFTuOAb1EiaAbVlttQ9hoCSnoQAvD_BwE:G:s&s_kwcid=AL!4422!3!795877020713!e!!g!!aws!23532472510!199502799824&gad_campaignid=23532472510&gbraid=0AAAAADjHtp8h4DERHMzwHrUeuZC0B-Wgj&gclid=CjwKCAjwhLPOBhBiEiwA8_wJHMc0rR3EuwL-BUwiOoxxZ1MAYm09RItY5nqFTuOAb1EiaAbVlttQ9hoCSnoQAvD_BwE)
 webserver, or on your own LAN as well. 
 
+<br>
+
 ## Prequisites
 You will need Docker to download the prebuilt CVAT containers that allow you to do this process. 
 CVAT is part of OpenCV and thus works on most systems. It can be configured locally from source, 
