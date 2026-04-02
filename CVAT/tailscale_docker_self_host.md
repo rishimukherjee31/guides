@@ -125,6 +125,12 @@ by typing in the ```IP Address``` of the server followed by the port number: ```
 Tailscale is secure so it handles all of the secure tunneling. If you are solely on a LAN, 
 you may need to configure port forwarding settings and firewalls if necessary. 
 
+### 6. Stop the Docker Container
+```bash
+docker compose -f docker-compose.yml \
+  -f components/serverless/docker-compose.serverless.yml down
+```
+
 
 
 
