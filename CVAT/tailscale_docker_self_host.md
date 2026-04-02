@@ -90,10 +90,10 @@ docker run --rm --gpus all nvidia/cuda:12.0-base-ubuntu22.04 nvidia-smi
 <br>
 
 ## Install CVAT with Serverless Support
-Install CVAT from the github page. You will need to set the ```CVAT_HOST``` in this step as well.
+You will need to set the ```CVAT_HOST``` in this step as well. I am using tailscale so I will be using the tailscale IP.
 
 ### Install CVAT on your Machine
-I am using tailscale so I will be using the tailscale IP:
+CVAT from source:
 ```bash
 git clone https://github.com/cvat-ai/cvat
 cd cvat
