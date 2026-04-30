@@ -74,7 +74,7 @@ The final `locale` command prints your current locale settings so you can confir
 
 ## Enable Universe Repository
 
-Ubuntu organizes its software into several repositories. The default installation only enables the `main` repository, which contains software officially supported by Canonical (Ubuntu's publisher). The `universe` repository contains community-maintained open-source software — including several packages that ROS2 depends on. Without enabling it, some dependencies will be unavailable and the ROS2 installation will fail:
+Ubuntu organizes its software into several repositories. The default installation only enables the `main` repository, which contains software officially supported by Canonical (Ubuntu's publisher). The `universe` repository contains community-maintained open-source software, including several packages that ROS2 depends on. Without enabling it, some dependencies will be unavailable and the ROS2 installation will fail:
 
 ```bash
 sudo apt install software-properties-common
@@ -97,7 +97,7 @@ sudo curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key \
   -o /usr/share/keyrings/ros-archive-keyring.gpg
 ```
 
-Before proceeding, verify the key downloaded correctly. It should be identified as `"OpenPGP Public Key"` or `"data"` — if it says `"ASCII text"`, the download likely failed and returned an error page instead of the actual key file:
+Before proceeding, verify the key downloaded correctly. It should be identified as `"OpenPGP Public Key"` or `"data"`, if it says `"ASCII text"`, the download likely failed and returned an error page instead of the actual key file:
 
 ```bash
 file /usr/share/keyrings/ros-archive-keyring.gpg
