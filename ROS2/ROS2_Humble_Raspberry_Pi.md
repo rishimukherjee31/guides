@@ -22,7 +22,7 @@ This document will walk you through installing ROS2 on a Raspberry Pi model 4B r
 
 ## Stop apt Lock Issues
 
-Ubuntu uses a package manager called `apt` to install and manage software. To prevent two processes from modifying packages at the same time and corrupting the system, `apt` uses lock files, small files that signal "I'm busy, don't touch this." Ubuntu ships with a background service called `unattended-upgr` that automatically downloads and installs security updates. This service runs silently in the background and frequently holds the `apt` lock, which will block our installation commands if it happens to be running at the same time.
+Ubuntu uses a package manager called `apt` to install and manage software. To prevent two processes from modifying packages at the same time and corrupting the system, `apt` uses lock files, small files that signal "*I'm busy, don't touch this*." Ubuntu ships with a background service called `unattended-upgr` that automatically downloads and installs security updates. This service runs silently in the background and frequently holds the `apt` lock, which will block our installation commands if it happens to be running at the same time.
 
 If you run into the error `Waiting for cache lock: Could not get lock /var/lib/dpkg/lock-frontend`, it means `unattended-upgr` (or another process) currently holds the lock. Stop it gracefully first:
 
