@@ -134,4 +134,4 @@ You've now got Ubuntu running on your Jetson Orin NX.
 
 ---
 
-*If something goes wrong, double-check your jumper cable connections in step 1 – that's a common failure point. Also, make sure your USB-C cable isn't a charging-only cables. That may not work*
+*If something goes wrong, double-check your jumper cable connections in step 1 – that's a common failure point. Also, make sure your USB-C cable isn't a charging-only cable. That may not work.*
