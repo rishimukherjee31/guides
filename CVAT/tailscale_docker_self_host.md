@@ -140,11 +140,23 @@ by typing in the ```IP Address``` of the server followed by the port number: ```
 Tailscale is secure so it handles all of the secure tunneling. If you are solely on a LAN, 
 you may need to configure port forwarding settings and firewalls if necessary. 
 
+Note: if you're directly SSH-ing and not using tailscale, you will need forward a local port from your device to 
+the server to get it to run on the browser. In other words SSH with the following command:
+
+```bash
+ssh -L 8080:localhost:8080 user@<server-ip>
+```
+
+Where user@<server-ip> is what you would use to normally SSH into the machine. Now you can create a user and upload the data. 
+
 ### 6. Stop the Docker Container
 ```bash
 docker compose -f docker-compose.yml \
   -f components/serverless/docker-compose.serverless.yml down
 ```
+
+---
+*For more detailed instructions visit [this link](https://docs.cvat.ai/docs/administration/community/basics/installation/), specifically to organize the data directory etc.*
 
 
 
