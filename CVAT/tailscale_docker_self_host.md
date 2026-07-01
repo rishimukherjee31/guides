@@ -130,6 +130,7 @@ Now you can create the super user:
 ```bash
 docker exec -it cvat_server bash -ic 'python3 ~/manage.py createsuperuser'
 ```
+> Choose a username and a password for your admin account.
 
 <br>
 
