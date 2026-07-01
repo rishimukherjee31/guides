@@ -147,7 +147,7 @@ the server to get it to run on the browser. In other words SSH with the followin
 ssh -L 8080:localhost:8080 user@<server-ip>
 ```
 
-Where user@<server-ip> is what you would use to normally SSH into the machine. Now you can create a user and upload the data. 
+Where ```user@<server-ip>``` is what you would use to normally SSH into the machine. Now you can create a user and upload the data. 
 
 ### 6. Stop the Docker Container
 ```bash
