@@ -1,0 +1,49 @@
+This document will walk you through the instructions to setup a static IP on the device. All of these steps are followed
+in the current OS of the pi. If you need to rebuild your own pi with the identical settings, follow the steps shown below.
+The current pi uses Ubuntu 22.04 server, and the steps have been completed using a linux machine connected via ssh.
+To setup your own static IP, you will need to create your own netplan with the correct IP. Let's first take a look at the
+netplan that exists on your pi (right after flashing on first boot).
+
+## Find and see your current netplan ##
+command>    ls /etc/netplan
+output>     50-cloud-init.yaml
+
+command>    cat /etc/netplan/50-cloud-init.yaml
+output>     # This file is generated from information provided by the datasource.  Changes
+      >     # to it will not persist across an instance reboot.  To disable cloud-init's
+      >     # network configuration capabilities, write a file
+      >     # /etc/cloud/cloud.cfg.d/99-disable-network-config.cfg with the following:
+      >     # network: {config: disabled}
+      >     network:
+      >         ethernets:
+      >             eth0:
+      >                 dhcp4: true
+      >                 optional: true
+      >         version: 2
+
+You can see that by default dhcp4 is set to true. This means that the pi will always contact the DHCP server (router or
+access point running the closest DHCP server usualy) and dynamically asign an IP to the pi. This is not ideal.       
+
+
+
+>           eth0:
+       >               dhcp4: false
+       >               dhcp6: false
+       >               optional: true
+       >               addresses:
+       >                   - 192.168.165.10/24
+
+We will use the IP address 192.168.165.10/24 as it is not used by any of our other devices. This IP may not work for you
+so adjust it accordingly. Keep in mind, this is the static IP. Additionally `networkd` is the rendering service. `dhcp4`
+and `dhcp6` are set to flase so the dynamic IP issue will not occur. Also the optional flag has been applied to prevent
+getting stuck on boot. 
+
+NOTE: Internet access will require wifi. We use wifi for any internet related tasks such as downloading packages.
+
+## Internet access through wifi using cli (always on reboot) ##
+command>    sudo apt update
+command>    sudo apt upgrade
+command>    sudo apt install network-manager
+
+command>    nmcli device wifi list
+command>    nmcli device wifi connect <your SSID> password <wifi password>
