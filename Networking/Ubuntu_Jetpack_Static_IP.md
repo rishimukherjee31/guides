@@ -71,10 +71,12 @@ network:
   renderer: NetworkManager
   ethernets:
     wired:
+      renderer: networkd
       match:
         name: "en*"
       dhcp4: false
       dhcp6: false
+      ignore-carrier: true
       addresses:
         - 192.168.210.83/24
 ```
