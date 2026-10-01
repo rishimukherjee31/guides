@@ -4,9 +4,7 @@ This document will walk you through assigning a static IP address (`192.168.210.
 
 This guide assumes JetPack 7.2 is already flashed and the Jetson has completed its first-boot setup. It is a companion to the ROS2 Jazzy installation guide, but does not depend on ROS2 being installed.
 
-> **NOTE:** The file in this guide assigns the address and nothing else. It assumes a `192.168.210.0/24` network (subnet mask 255.255.255.0). It does **not** set a default gateway or DNS servers, so the Jetson can talk to other devices on `192.168.210.x` but will not be able to reach the internet (for example, `apt install` and `git clone` will fail). If you are following the ROS2 Jazzy guide, complete that installation first, while the Jetson still has internet access. If you need internet access later, see [Adding a Gateway and DNS (optional)](#adding-a-gateway-and-dns-optional).
-
-> **NOTE:** Choose an address that your router will not hand out to another device. Either pick one outside the router's DHCP range, or create a DHCP reservation for `192.168.210.83` in the router's settings. Two devices with the same IP address cause intermittent, hard-to-diagnose connection drops.
+> **NOTE:** The file in this guide assigns the address and nothing else. It assumes a `192.168.210.0/24` network (subnet mask 255.255.255.0). It does **not** set a default gateway or DNS servers, so the Jetson can talk to other devices on `192.168.210.x` but will not be able to reach the internet (for example, `apt install` and `git clone` will fail). If you are following the ROS2 Jazzy guide, complete that installation first, while the Jetson still has internet access. If you need internet access later, see [Adding a Gateway and DNS (optional)](#adding-a-gateway-and-dns-optional). Choose an address that your router will not hand out to another device. Either pick one outside the router's DHCP range, or create a DHCP reservation for `192.168.xxx.xx` in the router's settings. Two devices with the same IP address cause intermittent, hard-to-diagnose connection drops.
 
 ## Contents
 
