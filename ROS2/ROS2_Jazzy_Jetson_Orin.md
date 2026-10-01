@@ -4,9 +4,7 @@ This document will walk you through installing ROS2 Jazzy Jazzalisco on an NVIDI
 
 This guide assumes JetPack 7.2 is already flashed and the Jetson has completed its first-boot setup. It does not cover flashing.
 
-> **NOTE:** The Jetson Orin Nano uses ARM64 (aarch64) architecture, NOT amd64 (x86_64). The ROS2 apt package handles this automatically, but if you ever add the repository by hand, always use `arch=arm64`. Using `amd64` is a common mistake that causes a "not signed" or "Not Found" error, as the Jetson is an ARM platform, and AMD64 is used on x86_64 devices (standard desktop/laptop PCs).
-
-> **NOTE:** JetPack 7.2 is based on Ubuntu 24.04 (Noble), so the matching ROS2 release is **Jazzy**. Do not follow guides for ROS2 Humble on this device. Humble targets Ubuntu 22.04 (Jammy) and its packages will not install on JetPack 7.2. Older Jetson guides (JetPack 5.x and 6.x, Ubuntu 20.04 and 22.04) do not apply here.
+> **NOTE:** The Jetson Orin Nano uses ARM64 (aarch64) architecture, NOT amd64 (x86_64). The ROS2 apt package handles this automatically, but if you ever add the repository by hand, always use `arch=arm64`. Using `amd64` is a common mistake that causes a "not signed" or "Not Found" error, as the Jetson is an ARM platform, and AMD64 is used on x86_64 devices (standard desktop/laptop PCs). Additionally, JetPack 7.2 is based on Ubuntu 24.04 (Noble), so the matching ROS2 release is **Jazzy**. Do not follow guides for ROS2 Humble on this device. Humble targets Ubuntu 22.04 (Jammy) and its packages will not install on JetPack 7.2. Older Jetson guides (JetPack 5.x and 6.x, Ubuntu 20.04 and 22.04) do not apply here.
 
 ## Contents
 
